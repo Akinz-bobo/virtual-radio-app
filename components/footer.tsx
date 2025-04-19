@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Facebook, Twitter, Instagram, Youtube } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -10,10 +11,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
-                <span className="font-serif text-brand-700 text-lg font-bold">
+              <div className="h-10 w-10 rounded-full flex items-center justify-center">
+                {/* <span className="font-serif text-brand-700 text-lg font-bold">
                   CB
-                </span>
+                </span> */}
+                <Image
+                  src="/logo.png"
+                  alt="Professional Team"
+                  width={60}
+                  height={60}
+                  className="bg-cover"
+                />
               </div>
               <span className="font-serif font-bold text-xl text-white">
                 Cinema Book
@@ -173,7 +181,7 @@ export default function Footer() {
 
         <div className="border-t border-brand-600 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-brand-200 text-sm">
-            © {new Date().getFullYear()} WaveStream Radio. All rights reserved.
+            © {new Date().getFullYear()} CinemaBook Radio. All rights reserved.
           </p>
           <div className="flex space-x-4 mt-4 md:mt-0">
             <Link
@@ -197,26 +205,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-brand-600 flex flex-wrap justify-center gap-6">
-          <img
-            src="/placeholder.svg?height=40&width=120&text=Partner+Logo"
-            alt="Partner Logo"
-            className="h-10 opacity-70 hover:opacity-100 transition-opacity"
-          />
-          <img
-            src="/placeholder.svg?height=40&width=120&text=Partner+Logo"
-            alt="Partner Logo"
-            className="h-10 opacity-70 hover:opacity-100 transition-opacity"
-          />
-          <img
-            src="/placeholder.svg?height=40&width=120&text=Partner+Logo"
-            alt="Partner Logo"
-            className="h-10 opacity-70 hover:opacity-100 transition-opacity"
-          />
-          <img
-            src="/placeholder.svg?height=40&width=120&text=Partner+Logo"
-            alt="Partner Logo"
-            className="h-10 opacity-70 hover:opacity-100 transition-opacity"
+        <div className="mt-8 pt-6 border-t">
+          <Image
+            src="/sponsor.jpg"
+            alt="Sponsor"
+            width={200}
+            height={60}
+            className="w-full bg-cover h-[100px] "
           />
         </div>
       </div>

@@ -20,6 +20,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useMobile } from "@/hooks/use-mobile";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { AuthNav } from "@/components/auth/auth-nav";
+import Image from "next/image";
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +47,14 @@ export default function Header() {
       <div className="container flex items-center justify-between h-16 px-4 mx-auto">
         <Link href="/" className="flex items-center space-x-2">
           <div className="h-10 w-10 rounded-full bg-brand-500 flex items-center justify-center">
-            <span className="font-serif text-white text-lg font-bold">CB</span>
+            {/* <span className="font-serif text-white text-lg font-bold">CB</span> */}
+            <Image
+              src="/logo.png"
+              alt="Professional Team"
+              width={60}
+              height={60}
+              className="bg-cover"
+            />
           </div>
           <span
             className={cn(
@@ -181,7 +189,7 @@ export default function Header() {
                           CB
                         </span>
                       </div>
-                      <span className="font-serif font-bold">WaveStream</span>
+                      <span className="font-serif font-bold">Cinema Book</span>
                     </Link>
                     <SheetTrigger asChild>
                       <Button variant="ghost" size="icon">

@@ -37,7 +37,7 @@ export default function SignUpPage() {
         <div className="flex items-center justify-center mb-8">
           <Link href="/" className="flex items-center space-x-2">
             <Radio className="h-8 w-8 text-brand-600" />
-            <span className="font-bold text-2xl">WaveStream</span>
+            <span className="font-bold text-2xl">Cinema Book</span>
           </Link>
         </div>
 
@@ -47,7 +47,7 @@ export default function SignUpPage() {
               Create an account
             </CardTitle>
             <CardDescription>
-              Enter your information to get started with WaveStream
+              Enter your information to get started with Cinema Book
             </CardDescription>
           </CardHeader>
           <CardContent>

@@ -77,7 +77,7 @@ export default function ContactPage() {
             <p className="text-muted-foreground mb-4">
               We'll respond within 24 hours
             </p>
-            <p className="font-medium">contact@wavestream.example</p>
+            <p className="font-medium">contact@cinemabook.example</p>
           </CardContent>
         </Card>
         <Card>
@@ -398,17 +398,17 @@ export default function ContactPage() {
           <div className="space-y-6">
             <div>
               <h3 className="text-lg font-semibold mb-2">
-                How can I listen to WaveStream?
+                How can I listen to Cinema Book?
               </h3>
               <p className="text-muted-foreground">
-                You can listen to WaveStream directly through our website or by
+                You can listen to Cinema Book directly through our website or by
                 installing our progressive web app on your mobile device. We're
                 also available on major podcast platforms.
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">
-                How do I submit my podcast to WaveStream?
+                How do I submit my podcast to Cinema Book?
               </h3>
               <p className="text-muted-foreground">
                 We're always looking for great content! Please use the contact
@@ -428,7 +428,7 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">
-                How can I advertise on WaveStream?
+                How can I advertise on Cinema Book?
               </h3>
               <p className="text-muted-foreground">
                 We offer various advertising options including podcast
@@ -438,11 +438,11 @@ export default function ContactPage() {
             </div>
             <div>
               <h3 className="text-lg font-semibold mb-2">
-                Are there job opportunities at WaveStream?
+                Are there job opportunities at Cinema Book?
               </h3>
               <p className="text-muted-foreground">
                 We're growing! Check our About page for current job openings or
-                send your resume to careers@wavestream.example.
+                send your resume to careers@cinemabook.example.
               </p>
             </div>
           </div>
@@ -476,7 +476,7 @@ export default function ContactPage() {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="WaveStream Location"
+          title="cinemabook Location"
           className="absolute inset-0"
         ></iframe>
       </div>

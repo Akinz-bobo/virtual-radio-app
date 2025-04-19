@@ -15,7 +15,7 @@ export default function Home() {
       <section className="relative w-full h-[80vh] bg-brand-700 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-30">
           <Image
-            src="/placeholder.svg?height=1080&width=1920&text=Book+Background"
+            src="/microphone.jpg"
             alt="Background"
             fill
             className="object-cover"
@@ -162,7 +162,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="/placeholder.svg?height=600&width=600&text=Team+Image"
+                src="/old-radio.jpg"
                 alt="Professional Team"
                 width={600}
                 height={600}

@@ -8,34 +8,34 @@ import { Radio, Headphones, BookOpen, Users, Award, Globe } from "lucide-react";
 
 const team = [
   {
-    name: "Alex Rivera",
+    name: "Isaac Ruiz",
     role: "Founder & CEO",
-    image: "/placeholder.svg?height=300&width=300&text=AR",
-    bio: "Alex founded WaveStream with a vision to create a platform that connects people through the power of audio. With over 15 years in broadcasting, Alex brings expertise and passion to every aspect of WaveStream.",
+    image: "/founder.jpg",
+    bio: "Ruiz founded Cinema Book with a vision to create a platform that connects people through the power of audio. With over 15 years in broadcasting, Ruiz brings expertise and passion to every aspect of Cinema Book.",
   },
   {
     name: "Sarah Johnson",
     role: "Head of Content",
     image: "/placeholder.svg?height=300&width=300&text=SJ",
-    bio: "Sarah oversees all content creation at WaveStream. Her background in journalism and digital media has helped shape our diverse programming lineup and commitment to quality storytelling.",
+    bio: "Sarah oversees all content creation at Cinema Book. Her background in journalism and digital media has helped shape our diverse programming lineup and commitment to quality storytelling.",
   },
   {
     name: "Marcus Lee",
     role: "Technical Director",
     image: "/placeholder.svg?height=300&width=300&text=ML",
-    bio: "Marcus ensures that WaveStream's technical infrastructure delivers a seamless listening experience. His innovations have been key to our growth and the development of our progressive web app.",
+    bio: "Marcus ensures that Cinema Book's technical infrastructure delivers a seamless listening experience. His innovations have been key to our growth and the development of our progressive web app.",
   },
   {
     name: "Mia Chen",
     role: "Music Director",
     image: "/placeholder.svg?height=300&width=300&text=MC",
-    bio: "Mia curates our music programming and works with artists to bring exclusive content to WaveStream. Her deep knowledge of various genres has helped create our signature sound.",
+    bio: "Mia curates our music programming and works with artists to bring exclusive content to Cinema Book. Her deep knowledge of various genres has helped create our signature sound.",
   },
   {
     name: "Jordan Taylor",
     role: "Community Manager",
     image: "/placeholder.svg?height=300&width=300&text=JT",
-    bio: "Jordan builds and nurtures our listener community. Through events, social media, and listener engagement initiatives, he ensures that WaveStream remains connected to our audience.",
+    bio: "Jordan builds and nurtures our listener community. Through events, social media, and listener engagement initiatives, he ensures that Cinema Book remains connected to our audience.",
   },
   {
     name: "Elena Rodriguez",
@@ -48,39 +48,39 @@ const team = [
 const milestones = [
   {
     year: "2018",
-    title: "WaveStream Founded",
+    title: "Cinema Book Founded",
     description:
-      "Alex Rivera launches WaveStream with a single podcast channel and a vision to revolutionize digital audio content.",
+      "Alex Rivera launches Cinema Book with a single podcast channel and a vision to revolutionize digital audio content.",
   },
   {
     year: "2019",
     title: "Live Broadcasting Begins",
     description:
-      "WaveStream expands to include live broadcasting capabilities, reaching listeners in real-time.",
+      "Cinema Book expands to include live broadcasting capabilities, reaching listeners in real-time.",
   },
   {
     year: "2020",
     title: "Mobile App Launch",
     description:
-      "The WaveStream progressive web app launches, allowing listeners to enjoy content on any device.",
+      "The Cinema Book progressive web app launches, allowing listeners to enjoy content on any device.",
   },
   {
     year: "2021",
     title: "Audiobook Integration",
     description:
-      "WaveStream adds audiobooks to its content library, partnering with publishers and independent authors.",
+      "Cinema Book adds audiobooks to its content library, partnering with publishers and independent authors.",
   },
   {
     year: "2022",
     title: "Community Growth",
     description:
-      "WaveStream reaches 1 million registered users and expands its team to 25 full-time employees.",
+      "Cinema Book reaches 1 million registered users and expands its team to 25 full-time employees.",
   },
   {
     year: "2023",
     title: "Award-Winning Content",
     description:
-      "WaveStream wins multiple industry awards for podcast excellence and innovative audio experiences.",
+      "Cinema Book wins multiple industry awards for podcast excellence and innovative audio experiences.",
   },
 ];
 
@@ -97,7 +97,7 @@ export default function AboutPage() {
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="max-w-4xl mx-auto text-center mb-12">
-        <h1 className="text-4xl font-bold mb-4">About WaveStream</h1>
+        <h1 className="text-4xl font-bold mb-4">About Cinema Book</h1>
         <p className="text-xl text-muted-foreground">
           Connecting the world through the power of audio since 2018.
         </p>
@@ -108,13 +108,13 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold mb-6">Our Story</h2>
           <div className="space-y-4 text-lg">
             <p>
-              WaveStream began with a simple idea: to create a platform where
+              Cinema Book began with a simple idea: to create a platform where
               audio content could thrive in the digital age. Founded in 2018 by
               Alex Rivera, we started as a small podcast network with big
               ambitions.
             </p>
             <p>
-              Today, WaveStream has grown into a comprehensive audio platform
+              Today, Cinema Book has grown into a comprehensive audio platform
               offering podcasts, live broadcasts, and audiobooks to millions of
               listeners worldwide. Our commitment to quality content and
               technological innovation has made us a leader in digital audio
@@ -135,8 +135,8 @@ export default function AboutPage() {
         </div>
         <div className="relative h-[400px] rounded-xl overflow-hidden">
           <Image
-            src="/placeholder.svg?height=800&width=1200&text=WaveStream+Studio"
-            alt="WaveStream Studio"
+            src="/microphone.jpg"
+            alt="Cinema Book Studio"
             fill
             className="object-cover"
           />
@@ -426,7 +426,7 @@ export default function AboutPage() {
                           "Ryan leads our development team, focusing on creating a seamless listening experience across all platforms.",
                           "Aisha designs intuitive user interfaces that make navigating our vast audio library simple and enjoyable.",
                           "Thomas ensures our broadcasts and recordings maintain the highest audio quality standards.",
-                          "Zoe develops and maintains our progressive web app, bringing WaveStream to mobile devices worldwide.",
+                          "Zoe develops and maintains our progressive web app, bringing Cinema Book to mobile devices worldwide.",
                           "Miguel manages our cloud infrastructure, ensuring reliability and scalability as our audience grows.",
                           "Leila rigorously tests all features before release, ensuring a bug-free experience for our listeners.",
                         ][item - 1]
@@ -441,7 +441,7 @@ export default function AboutPage() {
       </div>
 
       <div className="bg-muted rounded-xl p-8 text-center">
-        <h2 className="text-2xl font-bold mb-4">Join the WaveStream Family</h2>
+        <h2 className="text-2xl font-bold mb-4">Join the Cinema Book Family</h2>
         <p className="text-lg mb-6 max-w-2xl mx-auto">
           We're always looking for passionate individuals to join our team.
           Whether you're a content creator, developer, or audio enthusiast, we'd
