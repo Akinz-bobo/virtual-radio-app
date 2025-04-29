@@ -1,16 +1,8 @@
 import { prisma } from "@/lib/prisma";
 import jwt from "jsonwebtoken";
 import { cookies } from "next/headers";
-import { User } from "@prisma/client";
 
 const JWT_SECRET = process.env.JWT_SECRET!;
-
-interface TokenPayload {
-  userId: string;
-  email: string;
-  iat: number;
-  exp: number;
-}
 
 export async function getCurrentUser() {
   const token = (await cookies()).get("token")?.value;

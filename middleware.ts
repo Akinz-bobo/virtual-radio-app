@@ -3,7 +3,7 @@ import type { NextRequest } from "next/server";
 import { verify } from "jsonwebtoken";
 
 // Routes that require authentication
-const protectedRoutes = ["/admin"];
+const protectedRoutes = ["/admins"];
 
 export async function middleware(request: NextRequest) {
   const token = request.cookies.get("auth_token")?.value;

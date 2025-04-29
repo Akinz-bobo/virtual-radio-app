@@ -28,12 +28,12 @@ model User {
   comments      Comment[]
   reviews       Review[]
   bookmarks     Bookmark[]
+  commentLikes  CommentLike[]
   playbackProgress PlaybackProgress[]
   favorites     Favorite[]
   notifications Notification[]
   playlists     Playlist[]
   mediaHistories MediaHistory[]
-  reports       Report[]  @relation("UserReports")
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 }
@@ -103,7 +103,6 @@ model Audiobook {
   author       User      @relation(fields: [authorId], references: [id])
   genreId     String
   genre       Genre      @relation(fields: [genreId], references: [id])
-  transcription Transcription?
   chapters     Chapter[]
   comments     Comment[]
   reviews      Review[]
@@ -124,6 +123,7 @@ model Chapter {
   isDraft     Boolean  @default(true)
   playCount   Int      @default(0)
   audiobookId String
+  transcription Transcription?
   audiobook   Audiobook @relation(fields: [audiobookId], references: [id])
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt()
@@ -139,6 +139,7 @@ model Podcast {
   coverImage   String
   audioFile    String
   duration     Int
+  likeCount    Int      @default(0)
   releaseDate  DateTime
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
@@ -146,14 +147,28 @@ model Podcast {
   author      User      @relation(fields: [authorId], references: [id])
   genreId     String
   genre       Genre      @relation(fields: [genreId], references: [id])
-  transcription Transcription?
   comments     Comment[]
+  podcastEpisodes PodcastEpisode[]
   reviews      Review[]
   bookmarks    Bookmark[]
   playbackProgress PlaybackProgress[]
   favorites    Favorite[]
   playlistItems PlaylistItem[]
   mediaHistories MediaHistory[]
+}
+
+model PodcastEpisode {
+  id          String   @id @default(cuid())
+  title       String
+  audioFile   String
+  duration    Int
+  releaseDate DateTime
+  podcastId   String
+  isDraft     Boolean  @default(true)
+  podcast     Podcast @relation(fields: [podcastId], references: [id])
+  transcription Transcription?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
 }
 
 model LiveBroadcast {
@@ -180,10 +195,10 @@ model Transcription {
   createdAt    DateTime   @default(now())
   updatedAt    DateTime   @updatedAt
 
-  audiobook    Audiobook  @relation(fields: [audiobookId], references: [id])
-  audiobookId  String     @unique
-   podcastId      String?  @unique
-  podcast        Podcast? @relation(fields: [podcastId], references: [id])
+  chapter    Chapter  @relation(fields: [chapterId], references: [id])
+  chapterId  String     @unique
+  eposodeId      String?  @unique
+  episode        PodcastEpisode? @relation(fields: [eposodeId], references: [id])
   liveBroadcastId String? @unique
   liveBroadcast  LiveBroadcast? @relation(fields: [liveBroadcastId], references: [id])
 }
@@ -194,8 +209,6 @@ model Comment {
   content        String
   user           User     @relation(fields: [userId], references: [id])
   userId         String
-  createdAt      DateTime @default(now())
-  updatedAt      DateTime @updatedAt
   audiobookId    String?
   audiobook      Audiobook? @relation(fields: [audiobookId], references: [id])
   podcastId      String?
@@ -205,6 +218,21 @@ model Comment {
   parentId       String?
   parent         Comment?  @relation("CommentReplies", fields: [parentId], references: [id])
   replies        Comment[] @relation("CommentReplies")
+  likes          CommentLike[]
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+}
+
+model CommentLike {
+  id        String   @id @default(cuid())
+  user      User     @relation(fields: [userId], references: [id])
+  userId    String
+  comment   Comment  @relation(fields: [commentId], references: [id])
+  commentId String
+  isLike    Boolean
+  createdAt DateTime @default(now())
+
+  @@unique([userId, commentId])
 }
 
 model Review {
@@ -307,13 +335,3 @@ model MediaHistory {
   listenedAt  DateTime @default(now())
 }
 
-model Report {
-  id           String   @id @default(cuid())
-  reporter     User     @relation("UserReports", fields: [userId], references: [id])
-  userId       String
-  reason       String
-  resolved     Boolean  @default(false)
-  targetType   String
-  targetId     String
-  createdAt    DateTime @default(now())
-}
